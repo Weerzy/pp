@@ -1,0 +1,405 @@
+﻿<Window x:Class="PRAKTIKA5.AdminWindow"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRAKTIKA5"
+        mc:Ignorable="d"
+        Title="AdminWindow" Height="500" Width="1000">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.ColumnSpan="8" Grid.RowSpan="1">
+            <TabItem Header="Товары">
+                <Grid Background="#FFE5E5E5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl Grid.ColumnSpan="8" Grid.RowSpan="9">
+                        <TabItem Header="Товар">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="ТоварDataGrid" Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="ТоварDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="ТоварTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите название товара:"/>
+                                <ComboBox x:Name="ЦенаCbx" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите цену товара:"/>
+                                <ComboBox x:Name="ПроизводительCbx" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите продавца товара:"/>
+                                <Button x:Name="ТоварAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ТоварAddButton_Click"/>
+                                <Button x:Name="ТоварEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ТоварEditButton_Click"/>
+                                <Button x:Name="ТоварDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ТоварDelButton_Click"/>
+                                <Button x:Name="ExitButton1" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Цены">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="ЦенаDataGrid" Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="ЦенаDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="СуммаTextBox"  TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите сумму:"/>
+                                <TextBox x:Name="НалогTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите налог:"/>
+                                <Button x:Name="ЦенаAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ЦенаAddButton_Click"/>
+                                <Button x:Name="ЦенаEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ЦенаEditButton_Click"/>
+                                <Button x:Name="ЦенаDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ЦенаDelButton_Click"/>
+                                <Button x:Name="ExitButton2" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Производители">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="ПроизводительDataGrid"  Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="ПроизводительDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="ПродавецTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите продавца:"/>
+                                <TextBox x:Name="СтранаTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите страну:"/>
+                                <TextBox x:Name="РеквизитыTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите реквизиты:"/>
+                                <Button x:Name="ПроизводительAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПроизводительAddButton_Click"/>
+                                <Button x:Name="ПроизводительEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПроизводительEditButton_Click"/>
+                                <Button x:Name="ПроизводительDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПроизводительDelButton_Click"/>
+                                <Button x:Name="ExitButton3" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Пользователи">
+                <Grid Background="#FFE5E5E5" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl Grid.ColumnSpan="8" Grid.RowSpan="9">
+                        <TabItem Header="Пользователи">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="ПользовательDataGrid"  Grid.ColumnSpan="4"  Grid.RowSpan="9" SelectionChanged="ПользовательDataGrid_SelectionChanged"/>
+                                <ComboBox x:Name="ПраваCbx" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите права:"/>
+                                <ComboBox x:Name="ЛогинCbx" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите логин:"/>
+                                <TextBox x:Name="ИмяTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите имя:"/>
+                                <TextBox x:Name="ФамилияTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="3" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите фамилию:"/>
+                                <Button x:Name="ПользовательAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПользовательAddButton_Click"/>
+                                <Button x:Name="ПользовательEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПользовательEditButton_Click"/>
+                                <Button x:Name="ПользовательDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПользовательDelButton_Click"/>
+                                <Button x:Name="ExitButton4" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Входные данные">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="Входные_данныеDataGrid"  Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="Входные_данныеDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="ЛогинTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите логин:"/>
+                                <PasswordBox x:Name="ПарольTextBox" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите пароль:"/>
+                                <Button x:Name="Входные_данныеAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Входные_данныеAddButton_Click"/>
+                                <Button x:Name="Входные_данныеEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Входные_данныеEditButton_Click"/>
+                                <Button x:Name="Входные_данныеDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Входные_данныеDelButton_Click"/>
+                                <Button x:Name="ExitButton5" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                                
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Права">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="ПраваDataGrid"  Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="ПраваDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="Уровень_доступаTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите уровень доступа:"/>
+                                <TextBox x:Name="ПраваTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите название прав:"/>
+                                <Button x:Name="ПраваAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПраваAddButton_Click"/>
+                                <Button x:Name="ПраваEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПраваEditButton_Click"/>
+                                <Button x:Name="ПраваDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ПраваDelButton_Click"/>
+                                <Button x:Name="ExitButton6" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Оплата">
+                <Grid Background="#FFE5E5E5" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <TabControl Grid.ColumnSpan="8" Grid.RowSpan="9">
+                        <TabItem Header="Оплата">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="ОплатаDataGrid" Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="ОплатаDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="СуммаОплатыTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите внесенную сумму:"/>
+                                <ComboBox x:Name="БанкCbx" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите банк:"/>
+                                <ComboBox x:Name="КомиссияCbx" Grid.Column="4" Grid.Row="2" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите комиссию:"/>
+                                <Button x:Name="ОплатаAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ОплатаAddButton_Click"/>
+                                <Button x:Name="ОплатаEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ОплатаEditButton_Click"/>
+                                <Button x:Name="ОплатаDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="ОплатаDelButton_Click"/>
+                                <Button x:Name="ExitButton7" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Комиссия">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="КомиссияDataGrid" Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="КомиссияDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="КомиссияTextBox"  TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите комиссию:"/>
+                                <ComboBox x:Name="Способ_оплатыCbx" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите способ оплаты:"/>
+                                <Button x:Name="КомиссияAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="КомиссияAddButton_Click"/>
+                                <Button x:Name="КомиссияEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="КомиссияEditButton_Click"/>
+                                <Button x:Name="КомиссияDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="КомиссияDelButton_Click"/>
+                                <Button x:Name="ExitButton8" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Способ оплаты">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="Способ_оплатыDataGrid"  Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="Способ_оплатыDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="Способ_оплатыTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите способ оплаты:"/>
+                                <TextBox x:Name="Реквизиты_Способ_оплатыTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите реквизиты способа оплаты:"/>
+                                <Button x:Name="Способ_оплатыAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Способ_оплатыAddButton_Click"/>
+                                <Button x:Name="Способ_оплатыEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Способ_оплатыEditButton_Click"/>
+                                <Button x:Name="Способ_оплатыDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Способ_оплатыDelButton_Click"/>
+                                <Button x:Name="ExitButton9" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                        <TabItem Header="Банк">
+                            <Grid Background="#FFE5E5E5">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <DataGrid x:Name="БанкDataGrid"  Grid.ColumnSpan="4" Grid.RowSpan="9" SelectionChanged="БанкDataGrid_SelectionChanged"/>
+                                <TextBox x:Name="БанкTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="0" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите название банка:"/>
+                                <TextBox x:Name="Номер_счетаTextBox" TextWrapping="Wrap" Grid.Column="4" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="10,0,10,43" materialDesign:HintAssist.Hint="Введите номер счета:"/>
+                                <Button x:Name="БанкAddButton" Content="Добавить" Grid.Column="4" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="БанкAddButton_Click"/>
+                                <Button x:Name="БанкEditButton" Content="Изменить" Grid.Column="4" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="БанкEditButton_Click"/>
+                                <Button x:Name="БанкDelButton" Content="Удалить" Grid.Column="5" Grid.Row="7" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="БанкDelButton_Click"/>
+                                <Button x:Name="ExitButton10" Content="Выйти" Grid.Column="5" Grid.Row="8" Grid.ColumnSpan="1" Grid.RowSpan="1" Click="Button_Click" Cursor="Hand"/>
+                            </Grid>
+                        </TabItem>
+                    </TabControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,36 @@
+﻿<Window x:Class="PRAKTIKA5.UserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PRAKTIKA5"
+        mc:Ignorable="d"
+        Title="UserWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ExitButton" Content="Выйти" Grid.Column="8" Grid.Row="5" Click="ExitButton_Click" Cursor="Hand"/>
+        
+        <DataGrid x:Name="ТоварDataGrid" Background="#FFE5E5E5" Grid.ColumnSpan="4" Grid.RowSpan="5" SelectionChanged="ТоварDataGrid_SelectionChanged"/>
+        <DataGrid x:Name="ЧекDataGrid" Background="#FFE5E5E5" Grid.Column="5" Grid.ColumnSpan="4" Grid.RowSpan="5"/>
+        <Button x:Name="AddButton" Content="В чек" Grid.Column="4" Grid.Row="1"/>
+        <Button x:Name="DelButton" Content="Убрать" Grid.Column="4" Grid.Row="2"/>
+    </Grid>
+</Window>
